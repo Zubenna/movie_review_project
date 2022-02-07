@@ -1,4 +1,3 @@
-<h1> Movie Index Page </h1>
 
 <% if user_signed_in? %>
             <li class="nav-item ">
@@ -15,24 +14,28 @@
                 <%= link_to 'Sign In', new_user_session_path, class: 'nav-link text-white' %>
             </li>
         <% end %>
-<h1>All Movies</h1>
-<table class="">
-<tbody class="t-grid">
-<% @movies.each do |movie| %>
-<tr class="mb-2 d-flex flex-column">
-<td>Title: <%= movie.title %></td>
-<td>Description: <%= movie.description %></td>
-<td>Movie Length: <%= movie.movie_length %></td>
-<td>Director: <%= movie.director %></td>
-<td>Rating: <%= movie.ratings %></td>
-<td>Category: <%= movie.category %></td>
-<td><%= link_to 'Show', movie %></td>
-<td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
-<% end %>
-</tbody>
-</table>
-<br>
-<%= link_to 'New Movie', new_movie_path %>
-
+        <h1> Movie Index Page </h1>
+        <h1>All Movies</h1>
+        <table class="">
+        <tbody class="t-grid">
+        <% @movies.each do |movie| %>
+        <tr class="mb-2 d-flex flex-column">
+        <td><%= image_tag(movie.thumbnail.variant(resize_to_limit: [400, 200])) if movie.thumbnail.attached? %></td>
+        <td><%= video_tag(url_for(movie.clip), controls: true, style:"width:200px; height:150") if movie.clip.attached? %></td>
+        <td>Title: <%= movie.title %></td>
+        <td>Description: <%= movie.description %></td>
+        <td>Movie Length: <%= movie.movie_length %></td>
+        <td>Director: <%= movie.director %></td>
+        <td>Rating: <%= movie.ratings %></td>
+        <td>Category: <%= movie.category %></td>
+        <td><%= link_to 'Show', movie %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+        </tbody>
+        </table>
+        <br>
+        <%= link_to 'New Movie', new_movie_path %>
+        
+        

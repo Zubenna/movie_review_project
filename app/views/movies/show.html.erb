@@ -3,6 +3,12 @@
    <div class="panel-body">
      <div class="row">
       <div class="col-md-4">
+      <div style="" >
+      <%= image_tag(@movie.thumbnail, style:"width: 400px; height: 200px") %>
+      </div>
+      <div style="" >
+      <%= video_tag(url_for(@movie.clip), controls: true, style:"width:200px; height:150") %>
+      </div>
       <div class="table-responsive">
         <table class="table">
           <tbody>
@@ -60,7 +66,7 @@
       <% end %>
 
       <h3><p>"<%= review.comment %>"</p></h3>
-      <h5>Posted by: <%= link_to "#(review.user.username)", movie_review_path(@movie, review) %></h5>
+      <h5>Posted by: <%= link_to "#(review.user.username)", new_movie_path(@movie, review) %></h5>
       </div>
       <% end %>
       <% end %>

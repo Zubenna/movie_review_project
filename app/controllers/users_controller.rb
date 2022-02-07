@@ -6,11 +6,11 @@ class UsersController < ApplicationController
         @users = User.all
     end
 
-    def show
-        authenticate_user
-        # @user_movies = @user.movies
-        @users = User.find(params[:id])
-    end
+    # def show
+    #     # @movie = Movie.with_attached_thumbnail && Movie.with_attached_clip
+    #     @movie = Movie.find(params[:id])
+    # end
+
 
     private
 

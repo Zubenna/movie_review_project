@@ -3,11 +3,11 @@ class MoviesController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
 
     def index 
-      @movies = Movie.all
+        @movies = Movie.all
     end
 
     def show
-    @movie = Movie.find(params[:id])
+        @movie = Movie.find(params[:id])
     end
 
     def new 
@@ -41,6 +41,6 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     end
     def movie_params
-     params.require(:movie).permit(:title, :description, :movie_length, :director, :ratings, :category, :user_id )
+     params.require(:movie).permit(:title, :description, :movie_length, :director, :ratings, :thumbnail, :clip, :category, :user_id )
     end
     end
