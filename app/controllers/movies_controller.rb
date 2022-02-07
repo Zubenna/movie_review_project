@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-    # before_action :set_movie, only: [:show, edit, :update, :destroy]
+    before_action :set_movie, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
 
     def index 
@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
     end
 
     def show
-        @movie = Movie.find(params[:id])
+        @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
     end
 
     def new 
