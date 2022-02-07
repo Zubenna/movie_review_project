@@ -1,12 +1,12 @@
-<h1> Movie Show Page </h1>
-<div class="panel panel-default">
-   <div class="panel-body">
+<h1 class="text-center"> Movie Show Page </h1>
+<div class="container-fluid">
+   <div class="container">
      <div class="row">
       <div class="col-md-4">
-      <div style="" >
-      <%= image_tag(@movie.thumbnail, style:"width: 400px; height: 200px") %>
+      <div>
+      <%= image_tag(@movie.thumbnail.variant(resize_to_limit: [400, 200])) %>
       </div>
-      <div style="" >
+      <div>
       <%= video_tag(url_for(@movie.clip), controls: true, style:"width:200px; height:150") %>
       </div>
       <div class="table-responsive">

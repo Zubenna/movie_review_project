@@ -1,41 +1,25 @@
+<h1 class="text-center"> Movie Index Page </h1>
+<h3 class="text-center">All Movies</h3>
+<% if !user_signed_in? %>
+  <div class="w-75 p-2 mb-2 mx-auto" style="background-color: #eee;">
+    <h1 class="text-center">Your Favourite Movies Reviewed</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has</p>
+    <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg"%></p>
+  </div>
+<% end %>
 
-<% if user_signed_in? %>
-            <li class="nav-item ">
-                <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'bg-dark text-white' %>
-            </li>
-            <li>
-                <%= link_to "Your Movie Reviews", current_user %>
-            </li>
-            <li>
-                <%= link_to "New Movie", new_movie_path, class: "active" %>
-            </li>
-        <% else %>
-            <li class="nav-item">
-                <%= link_to 'Sign In', new_user_session_path, class: 'nav-link text-white' %>
-            </li>
-        <% end %>
-        <h1> Movie Index Page </h1>
-        <h1>All Movies</h1>
-        <table class="">
-        <tbody class="t-grid">
-        <% @movies.each do |movie| %>
-        <tr class="mb-2 d-flex flex-column">
-        <td><%= image_tag(movie.thumbnail.variant(resize_to_limit: [400, 200])) if movie.thumbnail.attached? %></td>
-        <td><%= video_tag(url_for(movie.clip), controls: true, style:"width:200px; height:150") if movie.clip.attached? %></td>
-        <td>Title: <%= movie.title %></td>
-        <td>Description: <%= movie.description %></td>
-        <td>Movie Length: <%= movie.movie_length %></td>
-        <td>Director: <%= movie.director %></td>
-        <td>Rating: <%= movie.ratings %></td>
-        <td>Category: <%= movie.category %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
-        </tbody>
-        </table>
-        <br>
-        <%= link_to 'New Movie', new_movie_path %>
-        
-        
+<div class="row">
+  <% @movies.each do |movie| %>
+    <div class="col-sm-6 col-md-3 mx-auto">
+      <div class="thumbnail">
+      <div>
+      <%= image_tag(movie.thumbnail.variant(resize_to_limit: [400, 200])) if movie.thumbnail.attached? %>
+      </div>
+      <div>
+      <%= video_tag(url_for(movie.clip), controls: true, style:"width:200px; height:150") if movie.clip.attached? %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
