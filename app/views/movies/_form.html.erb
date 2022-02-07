@@ -1,0 +1,46 @@
+<%= form_for @movie, html: { multipart: true } do |f|%>
+    <div class="form-group">
+      <% if @movie.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+            <ul>
+              <% @movie.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+    <%# <div class="field"> %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+    </div>
+    <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control", placeholder: "Description" %>
+    </div>
+    <div class="field">
+    <%= f.label :movie_length %><br>
+    <%= f.text_field :movie_length, class: "form-control", placeholder: "Movie Length" %>
+    </div>
+    <div class="field">
+    <%= f.label :director %><br>
+    <%= f.text_field :director, class: "form-control", placeholder: "Director" %>
+    </div>
+    <div class="field">
+    <%= f.label :movie_ratings %><br>
+    <%= f.text_field :ratings, class: "form-control", placeholder: "Rating" %>
+    </div>
+    <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category, class: "form-control", placeholder: "Category" %>
+    </div>
+    <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id, class: "form-control", placeholder: "User id" %>
+    </div>
+    <div class="actions">
+    <%= f.submit %>
+    </div>
+    </div>
+  <% end %>
+    
