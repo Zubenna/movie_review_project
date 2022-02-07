@@ -1,18 +1,24 @@
 class MoviesController < ApplicationController
+    # before_action :set_movie, only: [:show, edit, :update, :destroy]
+    before_action :authenticate_user!, except: [:index, :show]
+
     def index 
-    @movies = Movie.all
+      @movies = Movie.all
     end
+
     def show
     @movie = Movie.find(params[:id])
     end
+
     def new 
-    @movie = Movie.new
+     @movie = current_user.movies.build
     end
+
     def edit
         @movie = Movie.new
     end
     def create 
-    @movie = Movie.new(movie_params)
+    @movie = current_user.movies.build(movie_params)
     if @movie.save
     redirect_to @movie, notice: 'Movie was successfully created.' 
     else
