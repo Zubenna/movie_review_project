@@ -13,25 +13,3 @@
  *= require_tree .
  *= require_self
  */
- * {
-     box-sizing: border-box;
- }
-
- body {
-     background: #f1c0bf;
-     padding: 0;
-     margin: 0;
- }
-
- .review_title {
-     margin: 0 0 20px 0;
- }
-
- .reviews {
-  padding: 15px 0;
-  border-bottom: 1px solid #eaeaea;
- }
-
- .reviews .star-rating {
-     padding-bottom: 8px;
- }
