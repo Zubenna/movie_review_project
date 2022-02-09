@@ -16,7 +16,7 @@
   </form>
   <div class="col-lg-3 text-white d-flex">
     <button class="btn btn-primary">Button1</button>
-    <button class="btn btn-primary">Button1</button>
+    <%= link_to "Admin Panel", rails_admin_path, class:"btn btn-default text-white" if admin? %>
     <ul class="navbar-nav ml-auto text-white">
         <% if user_signed_in? %>
             <li">
