@@ -3,10 +3,18 @@ class MoviesController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     # before_action :check_admin
 
-    def index 
-        @movies = Movie.all
+    # def index 
+    #     @movies = Movie.all
+    # end
+    
+    def index
+      if params[:category].present? 
+        @movies = Movie.where(category: params[:category])
+      else
+        @movies = Movie.all.order(created_at: :desc)
+      end
     end
-
+    
     def show
         @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
         if @reviews.blank?
@@ -58,6 +66,6 @@ class MoviesController < ApplicationController
     # end
 
     def movie_params
-     params.require(:movie).permit(:title, :description, :movie_length, :director, :ratings, :thumbnail, :clip, :category, :user_id )
+       params.require(:movie).permit(:title, :description, :movie_length, :director, :ratings, :thumbnail, :clip, :category, :user_id )
     end
     end

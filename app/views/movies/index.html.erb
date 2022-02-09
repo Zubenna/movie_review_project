@@ -7,6 +7,18 @@
     <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg"%></p>
   </div>
 <% end %>
+<div class="container-fluid my-4">
+     <div class="row">
+      <div class="col-md-6">
+      <%= form_tag(movies_path, method: :get) do %>
+        <div class="">
+          <%= select_tag :category, options_for_select(["All", "Action", "Comedy", "Drama", "Science Fiction", "History", "Documentory"]) %>
+          <%= submit_tag 'Filter' %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+</div>
 
 <div class="row">
   <% @movies.each do |movie| %>
@@ -22,4 +34,5 @@
     </div>
   <% end %>
 </div>
+
 
