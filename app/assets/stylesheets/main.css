@@ -2,11 +2,136 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #f1c0bf;
-    padding: 0;
-    margin: 0;
+a {
+   text-decoration: none;
 }
+
+body {
+  background: #f1c0bf;
+  padding: 0;
+  margin: 0;
+}
+
+a.navbar-brand {
+  background-color: #ffff00;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.959);
+}
+
+.first_drop {
+  z-index: 5;
+  border-right: 1px solid rgb(197, 192, 192);
+  outline: none;
+}
+
+.first_drop button {
+  height: 2em;
+  padding: 0 1em;
+}
+
+.menu-form {
+  width: 34em;
+  height: 2em;
+  right: 0.4em;
+}
+
+nav form {
+  right: 4em;
+}
+
+.bi-search {
+  right: 2.5em;
+  top: 0.4em;
+}
+
+.imdb-pro-box {
+  border-right: 2px solid gray;
+  height: 2em;
+}
+
+.bi-person-circle {
+  margin-top: 0.2em;
+  margin-right: 0.3em;
+}
+
+.watch-box,
+.imdb-pro-box {
+  margin-top: 0.5em;
+}
+
+.login-box {
+  width: 8em;
+  top: 0.5em;
+}
+
+.en-box {
+ position: absolute;
+ right: 0.6em;
+}
+
+.admin-box {
+  /* position: relative; */
+  /* left: 10em; */
+}
+
+.login-box,
+.bi-search,
+.menu-form,
+nav form,
+.watch-box {
+  position: relative;
+}
+/* .nav-pills {
+  position: relative;
+  right: 0;
+  width: 1em;
+} */
+
+.user-box {
+ position: absolute;
+}
+
+.ubox-content {
+  position: relative;
+  left: 2em;
+  bottom: 0.5em;
+}
+
+/* .imdb-pro {
+  font-weight: bold;
+  right: 8em; 
+  top: 0.5em;
+  border-right: 1px solid gray;
+  padding-right: 1.2em; 
+} */
+
+.watch-box {
+  /* top: 0.5em; */
+  /* right: 6em; */
+}
+
+.watch-list {
+  /* cursor: pointer; */
+}
+
+.bi-bookmark-plus-fill {
+  /* top: 0.2em;
+  cursor: pointer; */
+}
+
+
+
+form .search-box {
+  /* margin-left: -5px;
+  border-left: none;
+  z-index: 0;
+  width: 100em; */
+}
+
 
 .review_title {
     margin: 0 0 20px 0;
@@ -19,4 +144,4 @@ body {
 
 .reviews .star-rating {
    padding-bottom: 8px;
-}
+} 

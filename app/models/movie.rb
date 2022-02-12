@@ -11,7 +11,7 @@ class Movie < ApplicationRecord
     def acceptable_image
         return unless thumbnail.attached? && clip.attached?
       
-        unless thumbnail.byte_size <= 1.megabyte && clip.byte_size <= 15.megabyte
+        unless thumbnail.byte_size <= 5.megabyte && clip.byte_size <= 20.megabyte
           errors.add(:thumbnail, "is too big or video is too big")
         end
       
