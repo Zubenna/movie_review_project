@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     # end
     
     def index
-      # @movies = Movie.paginate(page: params[:page])
+        @movies = Movie.paginate(page: params[:page])
       if params[:category].present? && params[:category] != "All"
         @movies = Movie.paginate.where(category: params[:category]).paginate(page: params[:page])
       else
