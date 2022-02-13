@@ -1,3 +1,4 @@
+/* Global */
 * {
     box-sizing: border-box;
 }
@@ -7,11 +8,12 @@ a {
 }
 
 body {
-  background: #f1c0bf;
+  background: rgb(7, 6, 6);
   padding: 0;
   margin: 0;
 }
 
+/* Menu/Header */
 a.navbar-brand {
   background-color: #ffff00;
   font-weight: bold;
@@ -85,14 +87,9 @@ nav form,
 .watch-box {
   position: relative;
 }
-/* .nav-pills {
-  position: relative;
-  right: 0;
-  width: 1em;
-} */
 
 .user-box {
- position: absolute;
+  position: absolute;
 }
 
 .ubox-content {
@@ -101,36 +98,59 @@ nav form,
   bottom: 0.5em;
 }
 
-/* .imdb-pro {
-  font-weight: bold;
-  right: 8em; 
-  top: 0.5em;
-  border-right: 1px solid gray;
-  padding-right: 1.2em; 
-} */
-
-.watch-box {
-  /* top: 0.5em; */
-  /* right: 6em; */
+/* Home page Cover */
+.clip-box {
+  bottom: 0;
+  right: 0;
 }
 
-.watch-list {
-  /* cursor: pointer; */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  padding: 2em 1.4em;
+  border: 3px solid #fff;
+  bottom: 20em;
+  font-weight: bolder;
+  border-radius: 6px;
+  background-color: inherit;
+}
+
+.carousel-control-next-icon  {
+  left:49em;
+}
+
+.carousel-control-prev-icon {
+  left: 0;
+}
+
+.thumb-small {
+  bottom: 1em;
+  left: 2em;
 }
 
 .bi-bookmark-plus-fill {
-  /* top: 0.2em;
-  cursor: pointer; */
+  top: 0;
+  left: 0;
+  color: #fff
 }
 
+/* Vertical Carousal */
 
-
-form .search-box {
-  /* margin-left: -5px;
-  border-left: none;
-  z-index: 0;
-  width: 100em; */
+.next-box {
+  padding: 0.6em 0;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #ffff00;
 }
+
+.side-slider {
+  background-color: rgba(7, 6, 6, 0.335);
+}
+
+.side-video {
+  left: 8em;
+  top: 2.5em;
+}
+
 
 
 .review_title {
