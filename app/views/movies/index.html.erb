@@ -57,57 +57,50 @@
 </div>
 </div>
 <div class="col-md-4">
-    <div class="text-left next-box">Up next</div>
-      <div class="side-slider">
-         <div class="d-flex mb-4 position-relative">
-            <div class="">
-            <%= image_tag(@movies[3].thumbnail, style:"width:100px; height:150px") if @movies[3].thumbnail.attached? %>
-            </div>
-            <div class="position-absolute side-video">
-            <%= video_tag(url_for(@movies[3].clip), controls: true, style:"width:250px; height:80px") if @movies[3].clip.attached? %>
-            </div>
-         </div>
-         <div class="d-flex mb-4 position-relative">
-            <div class=" ">
-            <%= image_tag(@movies[4].thumbnail, style:"width:100px; height:150px") if @movies[4].thumbnail.attached? %>
-            </div>
-            <div class="position-absolute side-video">
-            <%= video_tag(url_for(@movies[4].clip), controls: true, style:"width:250px; height:80px") if @movies[4].clip.attached? %>
-            </div>
-         </div>
-         <div class="d-flex mb-4 position-relative">
-            <div class="">
-            <%= image_tag(@movies[5].thumbnail, style:"width:100px; height:150px") if @movies[5].thumbnail.attached? %>
-            </div>
-            <div class="position-absolute side-video">
-            <%= video_tag(url_for(@movies[5].clip), controls: true, style:"width:250px; height:80px") if @movies[5].clip.attached? %>
-            </div>
-         </div>
+<div class="text-left next-box">Up next</div>
+<div class="side-slider">
+   <div class="d-flex mb-4 position-relative">
+      <div class="">
+      <%= image_tag(@movies[1].thumbnail, style:"width:100px; height:150px") if @movies[1].thumbnail.attached? %>
       </div>
-  </div>
+      <div class="position-absolute side-video">
+      <%= video_tag(url_for(@movies[1].clip), controls: true, style:"width:250px; height:80px") if @movies[1].clip.attached? %>
+      </div>
+   </div>
+   <div class="d-flex mb-4 position-relative">
+      <div class=" ">
+      <%= image_tag(@movies[2].thumbnail, style:"width:100px; height:150px") if @movies[2].thumbnail.attached? %>
+      </div>
+      <div class="position-absolute side-video">
+      <%= video_tag(url_for(@movies[2].clip), controls: true, style:"width:250px; height:80px") if @movies[2].clip.attached? %>
+      </div>
+   </div>
+   <div class="d-flex mb-4 position-relative">
+      <div class="">
+      <%= image_tag(@movies[3].thumbnail, style:"width:100px; height:150px") if @movies[3].thumbnail.attached? %>
+      </div>
+      <div class="position-absolute side-video">
+      <%= video_tag(url_for(@movies[3].clip), controls: true, style:"width:250px; height:80px") if @movies[3].clip.attached? %>
+      </div>
+   </div>
+</div>
+</div>
 </div>
 
-<section class="featured-b0x">
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-<div class="carousel-inner">
-  <div class="carousel-item active">
-    <img src="..." class="d-block w-100" alt="...">
+<section class="featured-box">
+<% @movies.each do |movie| %>
+  <div class="">
+    <div>
+    <%= image_tag(movie.thumbnail.variant(resize_to_limit: [400, 200])) if movie.thumbnail.attached? %>
+    </div>
+    <div>
+    <%= video_tag(url_for(movie.clip), controls: true, style:"width:200px; height:150") if movie.clip.attached? %>
+    </div>
   </div>
-  <div class="carousel-item">
-    <img src="..." class="d-block w-100" alt="...">
-  </div>
-  <div class="carousel-item">
-    <img src="..." class="d-block w-100" alt="...">
-  </div>
-</div>
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Next</span>
-</button>
-</div>
+<% end %>
 </section>
 </div>
+
+<%= will_paginate(@movies) %>
+
+

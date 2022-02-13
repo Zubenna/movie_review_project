@@ -8,6 +8,8 @@ class Movie < ApplicationRecord
 
     validate :acceptable_image
 
+    self.per_page = 4
+
     def acceptable_image
         return unless thumbnail.attached? && clip.attached?
       

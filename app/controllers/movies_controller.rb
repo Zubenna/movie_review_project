@@ -8,11 +8,11 @@ class MoviesController < ApplicationController
     # end
     
     def index
-      @movie_pages = Movie.paginate(page: params[:page], per_page: 2)
+      # @movies = Movie.paginate(page: params[:page])
       if params[:category].present? && params[:category] != "All"
-        @movies = Movie.where(category: params[:category])
+        @movies = Movie.paginate.where(category: params[:category]).paginate(page: params[:page])
       else
-        @movies = Movie.all.order(created_at: :desc)
+        @movies = Movie.paginate(page: params[:page]).order(created_at: :desc)
       end
     end
     
