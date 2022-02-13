@@ -1,11 +1,7 @@
 class MoviesController < ApplicationController
     before_action :set_movie, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:index]
     # before_action :check_admin
-
-    # def index 
-    #     @movies = Movie.all
-    # end
     
     def index
         @movies = Movie.paginate(page: params[:page])
@@ -62,8 +58,9 @@ class MoviesController < ApplicationController
     end
 
     # def check_admin
-    #     return unless admin_signed_in?
+    #   unless current_user.admin?
     #     redirect_to root_path, error: 'You are not allowed to access this part of the site'
+    #   end
     # end
 
     def movie_params

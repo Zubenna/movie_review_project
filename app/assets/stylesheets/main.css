@@ -90,6 +90,7 @@ nav form,
 
 .user-box {
   position: absolute;
+  z-index: 20;
 }
 
 .ubox-content {
@@ -188,6 +189,18 @@ nav form,
   color: royalblue;
   background-color: rgba(169, 169, 169, 0.089);
 }
+
+/* Movie Review Page */
+ .review-form,
+ .login-form {
+   width: 60%;
+ }
+
+ .form-input {
+   width: 100%;
+ }
+
+ /* Login Form */
 
 
 
