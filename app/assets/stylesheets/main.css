@@ -1,10 +1,10 @@
 /* Global */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-   text-decoration: none;
+  text-decoration: none;
 }
 
 body {
@@ -71,8 +71,8 @@ nav form {
 }
 
 .en-box {
- position: absolute;
- right: 0.6em;
+  position: absolute;
+  right: 0.6em;
 }
 
 .login-box,
@@ -110,8 +110,8 @@ nav form,
   background-color: inherit;
 }
 
-.carousel-control-next-icon  {
-  left:48.5em;
+.carousel-control-next-icon {
+  left: 48.5em;
 }
 
 .carousel-control-prev-icon {
@@ -147,7 +147,7 @@ nav form,
 }
 
 .today-heading {
-  color:#ff0;
+  color: #ff0;
   font-weight: bold;
   font-size: 1.5em;
   margin: 2em 0;
@@ -157,6 +157,7 @@ nav form,
 .featured-box {
   margin-top: 5em;
 }
+
 .white-circle {
   height: 1em;
   width: 1em;
@@ -179,33 +180,33 @@ nav form,
 
 .watch-btn {
   width: 100%;
-  outline:none;
+  outline: none;
   border: none;
   color: royalblue;
   background-color: rgba(169, 169, 169, 0.089);
 }
 
 /* Movie Review Page */
- .review-form,
- .login-form {
-   width: 60%;
- }
+.review-form,
+.login-form {
+  width: 60%;
+}
 
- .form-input {
-   width: 100%;
- }
+.form-input {
+  width: 100%;
+}
 
- /* Review */
+/* Review */
 
 .review_title {
-    margin: 0 0 20px 0;
+  margin: 0 0 20px 0;
 }
 
 .reviews {
- padding: 15px 0;
- border-bottom: 1px solid #eaeaea;
+  padding: 15px 0;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .reviews .star-rating {
-   padding-bottom: 8px;
+  padding-bottom: 8px;
 } 
