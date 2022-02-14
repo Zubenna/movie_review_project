@@ -75,11 +75,6 @@ nav form {
  right: 0.6em;
 }
 
-.admin-box {
-  /* position: relative; */
-  /* left: 10em; */
-}
-
 .login-box,
 .bi-search,
 .menu-form,
@@ -200,16 +195,7 @@ nav form,
    width: 100%;
  }
 
- /* Login Form */
-
-
-
-
-
-
-
-
-
+ /* Review */
 
 .review_title {
     margin: 0 0 20px 0;
