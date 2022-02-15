@@ -10,6 +10,6 @@
 users = User.create([
 {first_name: 'Daniel', surname: 'Eze', username: 'user-one', email: 'userone.email@example.com', password: '123456', password_confirmation:'123456', admin: true},
 {first_name: 'Jack', surname: 'Brown', username: 'user-two', email: 'usertwo.email@example.com', password: '123456', password_confirmation:'123456', admin: true},
-{first_name:  'Martin', surname: 'Kelly', username: 'user-three', email: 'usertwo.email@example.com', password: '123456', password_confirmation:'123456'}
+{first_name:  'Martin', surname: 'Kelly', username: 'user-three', email: 'userthree.email@example.com', password: '123456', password_confirmation:'123456'}
 ])
 

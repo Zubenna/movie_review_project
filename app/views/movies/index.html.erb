@@ -81,10 +81,10 @@
    </div>
    <div class="d-flex mb-4 position-relative">
       <div class="">
-      <%= image_tag(@movies[3].thumbnail, style:"width:100px; height:150px") if @movies[3].thumbnail.attached? %>
+      <%= image_tag(@movies[0].thumbnail, style:"width:100px; height:150px") if @movies[0].thumbnail.attached? %>
       </div>
       <div class="position-absolute side-video">
-      <%= video_tag(url_for(@movies[3].clip), controls: true, style:"width:250px; height:80px") if @movies[3].clip.attached? %>
+      <%= video_tag(url_for(@movies[0].clip), controls: true, style:"width:250px; height:80px") if @movies[0].clip.attached? %>
       </div>
    </div>
 </div>
