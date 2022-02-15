@@ -1,0 +1,101 @@
+<nav class="row navbar navbar-light bg-dark">
+  <div class="col-lg-3">
+  <a class="navbar-brand px-2 mx-4 mt-3 mb-4 text-dark" href="#">IMDb</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="text-white m-0 p-0" href="#">Menu</a>
+  </div>
+  <div class="col-lg-5">
+  <form class="d-flex">
+    <div class="dropdown first_drop">
+    <button class="btn px-2 bg-white dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+    All
+    </button>
+    <ul class="dropdown-menu p-4 bg-dark" aria-labelledby="dropdownMenu2">
+      <li><button class="dropdown-item text-white" type="button">Titles</button></li>
+      <li><button class="dropdown-item text-white" type="button">TV Episode</button></li>
+      <li><button class="dropdown-item text-white" type="button">Celebs</button></li>
+      <li><button class="dropdown-item text-white" type="button">Companies</button></li>
+      <li><button class="dropdown-item text-white" type="button">Keywords</button></li>
+      <li><button class="dropdown-item text-white" type="button">Advanced Search</button></li>
+    </ul>
+    </ul>
+    </div>
+    <div class="d-flex">
+      <input class="form-control menu-form" type="search" placeholder="Search IMDb" aria-label="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg>
+    </div>
+  </form>
+  </div>
+  <div class="col-lg-4 text-white d-flex">
+    <div class="imdb-pro-box"><a href="#" class="px-2 text-white">IMDbPro</a></div>
+    <div class="d-flex watch-box"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" class="bi mx-2 bi-bookmark-plus-fill" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+      </svg><p class="">Watchlist</p></div>
+      <div class="ms-3">
+     <ul class="navbar-nav text-white">
+     <% if user_signed_in? %>
+         <li>
+         <div class="login-box d-flex">
+         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+           <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+         </svg>
+        <ul class="nav nav-pills user-box m-0">
+        <li class="nav-item dropdown ubox-content">
+            <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown"><%= current_user.first_name %></a>
+            <div class="dropdown-menu dropdown-menu-end">
+                <a href="#" class="dropdown-item">Reports</a>
+                <a href="#" class="dropdown-item">Settings</a>
+                <a href="#" class="dropdown-item"><%= link_to "Admin Panel", rails_admin_path, class:"text-dark ps-3" if admin? %></a>
+                <a href="#" class="dropdown-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'text-dark ps-3' %></a>
+            </div>
+        </li>
+        </ul>
+         </li>
+         <% else %>
+         <li>
+         <%=  link_to "Sign In", new_user_session_path, class: "login-box text-white" %>
+         </li>
+     <% end %>
+     </ul>
+     </div>
+    <ul class="nav nav-pills m-0 p-0 en-box">
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown">EN</a>
+            <div class="dropdown-menu dropdown-menu-end">
+                <a href="#" class="dropdown-item">Reports</a>
+                <a href="#" class="dropdown-item">Settings</a>
+                <a href="#" class="dropdown-item">Anything</a>
+            </div>
+        </li>
+    </ul>
+</div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
