@@ -81,17 +81,26 @@
    </div>
    <div class="d-flex mb-4 position-relative">
       <div class="">
-      <%= image_tag(@movies[3].thumbnail, style:"width:100px; height:150px") if @movies[3].thumbnail.attached? %>
+      <%= image_tag(@movies[0].thumbnail, style:"width:100px; height:150px") if @movies[0].thumbnail.attached? %>
       </div>
       <div class="position-absolute side-video">
-      <%= video_tag(url_for(@movies[3].clip), controls: true, style:"width:250px; height:80px") if @movies[3].clip.attached? %>
+      <%= video_tag(url_for(@movies[0].clip), controls: true, style:"width:250px; height:80px") if @movies[0].clip.attached? %>
       </div>
    </div>
 </div>
 </div>
 </div>
-
 <section class="featured-box p-2">
+<% if user_signed_in? %>
+<div class="container d-flex container justify-content-end ">
+      <%= form_tag(movies_path, class: "fs-5, text-white", id: "filter", method: :get) do %>
+        <%= label_tag "Select Category" %>
+        <div class="mt-2 mb-4">
+          <%= select_tag :category, options_for_select(["Select Filter", "Action", "Comedy", "Drama", "Science Fiction", "History", "Documentory", "All"]), onchange: "$('#filter').submit();" %>
+        </div>
+      <% end %>
+</div>
+<% end %>
 <div class="row">
 <% @movies.each do |movie| %>
    <div class="col-sm-6 col-md-2 mx-auto position-relative">
@@ -146,6 +155,7 @@
 </div>
 </section>
 </div>
+<div class="text-white p-4 d-flex justify-content-end">
 <%= will_paginate(@movies) %>
-
+</div>
 
