@@ -22,7 +22,7 @@ This project is designed to work on a desktop or large screen at this time. Resp
 ![image](image/movie-show-2.png)
 
 ## Movie Display
-![image](image/Movie-display-and selection.png)
+![image](image/Movie-display-and-selection.png)
 
 ## Admin Home Page
 ![image](image/Admin-home.png)
@@ -114,4 +114,4 @@ Feel free to check the [issues page](https://github.com/Zubenna/movie_review_pro
 Give a star if you like this project!
 
 ## Acknowledgments
-- JetThoughts Test Projec
+- JetThoughts Test Project
