@@ -62,6 +62,7 @@ class MoviesController < ApplicationController
     @sorted = @movies
     @sorted
   end
+  # end
 
   # def check_admin
   #   unless current_user.admin?
