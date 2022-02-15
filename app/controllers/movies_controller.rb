@@ -4,12 +4,8 @@ class MoviesController < ApplicationController
   # before_action :check_admin
 
   def index
-    @movies = Movie.paginate(page: params[:page])
-    @movies = if params[:category].present? && params[:category] != 'All'
-                Movie.paginate.where(category: params[:category]).paginate(page: params[:page])
-              else
-                Movie.paginate(page: params[:page]).order(created_at: :desc)
-              end
+    sort_movie
+    @movies = @sorted.paginate(page: params[:page])
   end
 
   def show
@@ -55,6 +51,16 @@ class MoviesController < ApplicationController
 
   def set_movie
     @movie = Movie.find(params[:id])
+  end
+
+  def sort_movie
+    @movies = if params[:category].present? && params[:category] != 'All'
+               Movie.where(category: params[:category])
+             else
+               Movie.order(created_at: :desc)
+             end
+    @sorted = @movies
+    @sorted
   end
 
   # def check_admin
