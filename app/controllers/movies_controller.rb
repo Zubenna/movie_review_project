@@ -55,10 +55,10 @@ class MoviesController < ApplicationController
 
   def sort_movie
     @movies = if params[:category].present? && params[:category] != 'All'
-               Movie.where(category: params[:category])
-             else
-               Movie.order(created_at: :desc)
-             end
+                Movie.where(category: params[:category])
+              else
+                Movie.order(created_at: :desc)
+              end
     @sorted = @movies
     @sorted
   end
