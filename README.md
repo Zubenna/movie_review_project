@@ -81,13 +81,15 @@ rspec
 - email: userthree.email@example.com, password: 123456 (Normal User)
 
 ## Before testing
-- Login with the admin account and create at least three movies for each category listed in the movie selection area. This is to enable see all the features and avoid brealing the app.
+- Login with the admin account and create at least three movies for each category listed in the movie selection area. This is to enable you see all the features and avoid breaking the app. This app uses rails active storage to store image and video files locally and Amazon S3 storage for production (hosted version).
 
 ## Uploading Files
-- Do not exceed 20MB for video and 5MB for thumbnail image while creating movies.
+- This app stores video and image files using Amazon S3 Storage in combination with rails active storage.
+- Do not exceed 11MB for video and 2MB for thumbnail image while creating movies.
+- Login with the admin account provided in this document to, access the admind panel, create new movie along with uploading movie clip and thumbnail image.
 
 ## Live Version
-- [Launch App]( Yet to be added )
+- [Launch App](https://intense-eyrie-27347.herokuapp.com/)
 
 ## Built With
 - Ruby, Ruby on Rails

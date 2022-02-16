@@ -96,7 +96,7 @@
       <%= form_tag(movies_path, class: "fs-5, text-white", id: "filter", method: :get) do %>
         <%= label_tag "Select Category" %>
         <div class="mt-2 mb-4">
-          <%= select_tag :category, options_for_select(["Select Filter", "Action", "Comedy", "Drama", "Science Fiction", "History", "Documentory", "All"]), onchange: "$('#filter').submit();" %>
+          <%= select_tag :category, options_for_select(["Select Filter", "Action", "Comedy", "Drama", "Science Fiction", "Documentory", "All"]), onchange: "$('#filter').submit();" %>
         </div>
       <% end %>
 </div>
