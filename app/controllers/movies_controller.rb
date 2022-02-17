@@ -10,11 +10,7 @@ class MoviesController < ApplicationController
 
   def show
     @reviews = Review.where(movie_id: @movie.id).order('created_at DESC')
-    @avg_review = if @reviews.blank?
-                    0
-                  else
-                    @reviews.average(:rating).round
-                  end
+    avg_reviews
   end
 
   def new
@@ -48,6 +44,14 @@ class MoviesController < ApplicationController
   end
 
   private
+
+  def avg_reviews
+    @avg_review = if @reviews.blank?
+                    0
+                  else
+                    @reviews.average(:rating).round
+                  end
+  end
 
   def set_movie
     @movie = Movie.find(params[:id])
