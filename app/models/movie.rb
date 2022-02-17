@@ -1,6 +1,5 @@
 class Movie < ApplicationRecord
   belongs_to :user
-  # belongs_to :user, :optional => true
   has_many :reviews
 
   has_one_attached :clip
@@ -21,7 +20,7 @@ class Movie < ApplicationRecord
   def acceptable_image
     return unless thumbnail.attached? && clip.attached?
 
-    unless thumbnail.byte_size <= 5.megabyte && clip.byte_size <= 20.megabyte
+    unless thumbnail.byte_size <= 5.megabyte && clip.byte_size <= 30.megabyte
       errors.add(:thumbnail, 'is too big or video is too big')
     end
 

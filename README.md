@@ -37,36 +37,57 @@ This project is designed to work on a desktop or large screen at this time. Resp
 - Movie Rating from 1 to 10.
 - Admin panel to perform CRUD action and manage movies.
 
-## Project SetUp/Installation
+## Project SetUp/Installation (Local Testing)
 
 Get a local copy of the file. Clone with HTTPS using the command below.
 
 ```
 git clone https://github.com/Zubenna/movie_review_project.git
 ```
-## Access project folders 
+### Access project folders 
 ```
 cd movie_review_project
 ```
-## Install all the dependencies
+### Install all the dependencies
 ```
 bundle install
 ```
-## Create the database with the following command
+### Create the database with the following command
 ```
 rails db:create
 ```
-## Migrate the database with the following command
+### Migrate the database with the following command
 ```
 rails db:migrate
 ```
-## Populate the database with the following command
+### Populate the database with the following command
 ```
 rails db:seed
 ```
-## Run Application test while on the project root with the following 
+### Run Application test while on the project root.
+Test has been written for this project using Rspec. Various features and model relationship (association) has been tested. You can see the test code in spect directory at the root of the project directory. Test coverage is about 96%
 
-### Type rspec in the project root to run tests.
+#### Test for various features using.
+```
+rspec spec/features/authentication_spec.rb
+```
+```
+rspec spec/features/movie_spec.rb
+```
+```
+rspec spec/features/review_spec.rb
+```
+#### Test model associations using.
+```
+rspec spec/model/movie_spec.rb
+```
+```
+rspec spec/model/review_spec.rb
+```
+```
+rspec spec/model/user_spec.rb
+```
+#### Type rspec in the project root to run all tests.
 ```
 rspec
 ```
@@ -81,13 +102,15 @@ rspec
 - email: userthree.email@example.com, password: 123456 (Normal User)
 
 ## Before testing
-- Login with the admin account and create at least three movies for each category listed in the movie selection area. This is to enable see all the features and avoid brealing the app.
+- Login with the admin account and create at least three movies for each category listed in the movie selection area. This is to enable you see all the features and avoid breaking the app. This app uses rails active storage to store image and video files locally and Amazon S3 storage for production (hosted version). The hosted version has some movies and users already created. You can add more and start reviewing the movies.
 
 ## Uploading Files
-- Do not exceed 20MB for video and 5MB for thumbnail image while creating movies.
+- This app stores video and image files using Amazon S3 Storage in combination with rails active storage.
+- Do not exceed 11MB for video and 2MB for thumbnail image while creating movies.
+- Login with the admin account provided in this document to access the admin panel, create new movies along with uploading movie clip and thumbnail image.
 
 ## Live Version
-- [Launch App]( Yet to be added )
+- [Launch App](https://intense-eyrie-27347.herokuapp.com/)
 
 ## Built With
 - Ruby, Ruby on Rails
