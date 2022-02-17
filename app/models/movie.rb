@@ -1,6 +1,5 @@
 class Movie < ApplicationRecord
   belongs_to :user
-  # belongs_to :user, :optional => true
   has_many :reviews
 
   has_one_attached :clip
